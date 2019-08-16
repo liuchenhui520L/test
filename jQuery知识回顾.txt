@@ -1,0 +1,91 @@
+﻿一.jQuery
+1.jQuery概述
+	什么是jQuery: 是一个轻量的, 免费开源的js函数库, 可以简化js代码
+
+	jQuery的优势:
+		可以简化js代码
+		可以像CSS那样来获取元素
+		可以修改CSS属性来控制页面的效果
+		可以兼容常用的浏览器
+
+	jQuery的版本控制
+		1.x
+		2.x
+		3.x
+
+	jQuery的引入
+		<script src="jquery-1.4.2.js"></script>
+
+2.jQuery的语法
+	$符号介绍
+		$ 等价于 jQuery, $()是一个函数, 等价于调用 jQuery()函数, 返回一个jQuery对象(集合), 包含了若干html元素, 通过jQuery提供的方法或 属性对其进行操作
+
+	文档就绪事件
+		$(document).ready(function(){
+			//在文档加载完之后立即执行
+		});
+
+		简写形式:
+		$(function(){
+
+		});
+
+	js对象和jQuery对象的互相转换
+		js对象转jQuery对象
+			var oDiv = ...
+			var $Div = $(oDiv);
+
+		jQuery对象转成js对象
+			var $Div = $("div");
+			var oDiv = $Div[0];
+			var oDiv = $Div.get(0);
+3.jQuery选择器
+	基本选择器
+		$("div")-根据标签名称选择元素
+		$(".c1"); -类选择器，所有CLASS为.c1的元素
+		$("#d1") -选择所有ID值为d1的元素
+		$("div,.c1,#d1")--选择所有div和class值为.c1的元素，id为d1的元素
+	层级选择器
+		$("div span") --先择div内部所有span
+		$("div>span")--选择div下所有的子元素span
+		$("div+span")--选择div后面紧邻的兄弟span
+		$("div~span") --选择div后面所有的兄弟元素
+	内容选择器
+		$("div:contains('aaa')")--选择div内容里面包含aaa文本
+		$("div:empty")--选择所有空的div元素
+		$("div:parent")--选择所有非空的div
+		$("div:has(span)")--选择具有span子元素的div元素
+
+	基本过滤选择器
+		$("div:first")--选择所有div中的第一个div
+		$("div:last")--选择所有div中最后一个div
+		$("div:eq(n)")--选择所有div中索引值为n的div,n是从0开始
+		$("div:lt(n)")--选择所有div中索引值小于n的div
+		$("div:gt(n)")--选择所有div中索引值大于n的div
+
+	属性选择器
+		$(div[class]);--选择所有div中包含class属性的div
+		$(div[class='x']);--选择所有div中有class属性，并且class='x'的div
+		$(div[class!='x']);--选择所有div中有class属性，并且class！='x'的div
+
+	可见选择器
+		$("div:hidden")--选择所有隐藏的div元素
+		$("div:visible")--选择所有显示的div元素
+
+	子元素选择器
+		$("div span:first-child")--选择div内部第一个span元素
+		$("div>span:first-child")--选择div内部第一个span子元素
+		$("div span:last-child")--选择div内部最后一个span元素
+		$("div>span:last-child")--选择div内部最后一个span子元素
+		$("div span:nth-child(n)")--选择div内部第N一个span元素
+		
+	表单选择器
+               $(":input")-匹配所有的表单项元素（包括input,select,texttextarea）
+               $(":text")--匹配所有的单行文本框元素
+               $(":password")--匹配所有的密码框
+               $(":radio")--匹配所有的单选框
+               $(":checkbox")--匹配所有的复选框
+               $(":checked")--匹配所有的单选框，复选框，option选项
+	
+		
+		
